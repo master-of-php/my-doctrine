@@ -3,6 +3,10 @@ composer install and check (run command git status)
 create database mydb; (run it in mysql console)
 change credential in bootstrap.php
 run php create_product.php test-product01 (test-product01 is field's name value of product table)
+php create_product.php test-product01
+php list_products.php
+php show_product.php 1
+
 **********************************************************
 vendor/bin/doctrine orm:schema-tool:drop --force
 vendor/bin/doctrine orm:schema-tool:create
