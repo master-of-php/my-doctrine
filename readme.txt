@@ -6,7 +6,7 @@ run php create_product.php test-product01 (test-product01 is field's name value 
 php create_product.php test-product01
 php list_products.php
 php show_product.php 1
-
+php update_product.php 5 'test update product php file'
 **********************************************************
 vendor/bin/doctrine orm:schema-tool:drop --force
 vendor/bin/doctrine orm:schema-tool:create
