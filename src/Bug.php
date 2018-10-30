@@ -14,7 +14,9 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class Bug
 {
-    protected $products;
+    protected $engineer;
+    protected $reporter;
+    protected $products = null;
     /**
      * @Id @Column(type="integer") @GeneratedValue()
      * @var int
@@ -47,6 +49,18 @@ class Bug
         $this->products = new ArrayCollection();
     }
 
+    public function assignToProduct(Product $product)
+    {
+        $this->products[] = $product;
+    }
+
+    /**
+     * @return ArrayCollection|null
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
 
     /**
      * @return mixed
@@ -103,4 +117,40 @@ class Bug
     {
         $this->status = $status;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getEngineer()
+    {
+        return $this->engineer;
+    }
+
+    /**
+     * @param mixed $engineer
+     */
+    public function setEngineer(User $engineer)
+    {
+        $engineer->assignedToBug($this);
+        $this->engineer = $engineer;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getReporter(User $reporter)
+    {
+        $reporter->addReportedBug($this);
+        return $this->reporter;
+    }
+
+    /**
+     * @param mixed $reporter
+     */
+    public function setReporter($reporter)
+    {
+        $this->reporter = $reporter;
+    }
+
+
 }

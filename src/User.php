@@ -8,6 +8,7 @@
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * @ORM\Entity @ORM\Table(name="users")
  */
@@ -36,6 +37,15 @@ class User
         $this->assignedBugs = new ArrayCollection();
     }
 
+    public function assignedToBug(Bug $bug)
+    {
+        $this->assignedBugs[] = $bug;
+    }
+
+    public function addReportedBug(Bug $bug)
+    {
+        $this->reportedBugs[] = $bug;
+    }
 
     /**
      * @return mixed
