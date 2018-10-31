@@ -6,8 +6,10 @@
  * Time: 17:21
  */
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * @Entity @Tablename(name ="products")
+ * @Entity @Table(name ="products")
  **/
 class Product
 {
@@ -15,8 +17,8 @@ class Product
     protected $id;
 
     /**
-     * @Column(type="string")
-     **/
+     * @ORM\Column(type="string")
+     */
     protected $name;
 
 
@@ -25,17 +27,12 @@ class Product
         return $this->id;
     }
 
-    /**
-     * @return mixed
-     */
+
     public function getName()
     {
         return $this->name;
     }
 
-    /**
-     * @param mixed $name
-     */
     public function setName($name)
     {
         $this->name = $name;

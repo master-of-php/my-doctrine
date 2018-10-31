@@ -14,9 +14,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class Bug
 {
-    protected $engineer;
-    protected $reporter;
-    protected $products = null;
+
     /**
      * @Id @Column(type="integer") @GeneratedValue()
      * @var int
@@ -40,6 +38,19 @@ class Bug
      * @Mapping\Column(type="string")
      */
     protected $status;
+
+    /**
+     * @ManyToOne(targetEntity="User", inversedBy="assignedBugs")
+     */
+    protected $engineer;
+    /**
+     * @Mapping\ManyToOne(targetEntity="User", inversedBy="reportedBugs")
+     */
+    protected $reporter;
+    /**
+     * @Mapping\ManyToMany(targetEntity="Products")
+     */
+    protected $products = null;
 
     /**
      * Bug constructor.
@@ -151,6 +162,5 @@ class Bug
     {
         $this->reporter = $reporter;
     }
-
 
 }
