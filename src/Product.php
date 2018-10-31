@@ -17,7 +17,7 @@ class Product
     protected $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @Column(type="string")
      */
     protected $name;
 

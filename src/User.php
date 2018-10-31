@@ -14,16 +14,18 @@ class User
     protected $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @Column(type="string")
      */
     protected $name;
+
     /**
-     * @ORM\OneToMany(targetEntity="Bug" mappedBy="reporter")
-     */
+     * @OneToMany(targetEntity="Bug", mappedBy="reporter")
+     **/
     protected $reportedBugs = null;
+
     /**
-     * @ORM\OneToMany(targetEntity="Bug" mappedBy="$engineer")
-     */
+     * @OneToMany(targetEntity="Bug", mappedBy="engineer")
+     **/
     protected $assignedBugs = null;
 
     public function __construct()

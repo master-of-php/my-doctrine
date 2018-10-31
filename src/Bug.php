@@ -16,7 +16,7 @@ class Bug
 {
 
     /**
-     * @Id @Column(type="integer") @GeneratedValue()
+     * @Id @Column(type="integer") @GeneratedValue
      * @var int
      */
     protected $id;
@@ -29,13 +29,13 @@ class Bug
 
     /**
      * @var DateTime
-     * @Mapping\Column(type="datetime")
+     * @Column(type="datetime")
      */
     protected $created;
 
     /**
      * @var string
-     * @Mapping\Column(type="string")
+     * @Column(type="string")
      */
     protected $status;
 
@@ -44,11 +44,11 @@ class Bug
      */
     protected $engineer;
     /**
-     * @Mapping\ManyToOne(targetEntity="User", inversedBy="reportedBugs")
+     * @ManyToOne(targetEntity="User", inversedBy="reportedBugs")
      */
     protected $reporter;
     /**
-     * @Mapping\ManyToMany(targetEntity="Products")
+     * @ManyToMany(targetEntity="Product")
      */
     protected $products = null;
 
