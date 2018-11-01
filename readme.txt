@@ -14,3 +14,6 @@ vendor/bin/doctrine orm:schema-tool:update --force
 **********************************************************
 vendor/bin/doctrine orm:schema-tool:update --force
 php create_user.php testUserName
+
+php create_product.php "Mango";
+php create_bug.php 1 1 1
