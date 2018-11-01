@@ -49,7 +49,7 @@ class Bug
     protected $reporter;
     /**
      * @ManyToMany(targetEntity="Product")
-     */
+     **/
     protected $products = null;
 
     /**
@@ -149,17 +149,17 @@ class Bug
     /**
      * @return mixed
      */
-    public function getReporter(User $reporter)
+    public function getReporter()
     {
-        $reporter->addReportedBug($this);
         return $this->reporter;
     }
 
     /**
      * @param mixed $reporter
      */
-    public function setReporter($reporter)
+    public function setReporter(User $reporter)
     {
+        $reporter->addReportedBug($this);
         $this->reporter = $reporter;
     }
 
