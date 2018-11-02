@@ -163,4 +163,8 @@ class Bug
         $this->reporter = $reporter;
     }
 
+    public function close(){
+        $this->status = 'CLOSE';
+    }
+
 }
