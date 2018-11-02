@@ -14,10 +14,16 @@ vendor/bin/doctrine orm:schema-tool:update --force
 **********************************************************
 php create_user.php Evgeniy
 php create_user.php Boris
-php create_product.php "Braem (Java)";
+php create_product.php "Braem (Java)"; (id 1)
+php create_product.php "Braem (PHP)"; (id 2)
+php create_product.php "Braem (Python)"; (id 3)
 php create_bug.php 1 1 1
-php create_bug.php 2 2 1
-php create_bug.php 1 2 1
+php create_bug.php 2 2 2
+php create_bug.php 1 2 3
 **********************************************************
 php list_bugs.php
 
+vendor/bin/doctrine orm:schema-tool:update --force --dump-sql (printed to the screen)
+
+php dashboard.php 1
+php dashboard.php 2
