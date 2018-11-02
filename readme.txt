@@ -31,3 +31,6 @@ php dashboard.php 2
 php products.php
 
 php close_bug.php 1
+
+ php list_bugs_repository.php
+
