@@ -27,3 +27,5 @@ vendor/bin/doctrine orm:schema-tool:update --force --dump-sql (printed to the sc
 
 php dashboard.php 1
 php dashboard.php 2
+
+php products.php
